@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Magic Card Viewer</title>
+</head>
+
+<body class="bg-gray-100">
+    <div class="mx-auto w-7xl bg-black min-h-screen flex flex-col items-center justify-center p-4">
+        <h1 class="text-3xl text-white mb-6">Magic Card Viewer</h1>
+        <div id="foto" class="mb-6"></div>
+        <div class="flex flex-row space-x-4">
+            <button class="p-4 bg-green-500 text-white rounded" onclick="likeCard()">smash</button>
+            <button class="p-4 bg-red-500 text-white rounded" onclick="dislikeCard()">pass</button>
+        </div>
+        <div class="mt-6 text-white">
+            <div id="like-counter"></div>
+            <div id="dislike-counter"></div>
+        </div>
+    </div>
+</body>
+
+</html>
