@@ -8,13 +8,21 @@ function updateCounters() {
 }
 
 async function getRandomCard() {
-    const filter = ["art%3Afemale+art%3Aanime&unique"]
-    const url = `https://api.scryfall.com/cards/random?q=${filter[0]}`;
+    const filters = [
+        'art:female art:anime',
+        // 'art:sexually-suggestive art:female',
+    ];
+    const randomQuery = encodeURIComponent(filters[Math.floor(Math.random() * filters.length)]);
+    const url = `https://api.scryfall.com/cards/random?q=${randomQuery}`;
+
     const response = await fetch(url);
     const data = await response.json();
 
+    console.log(url)
+
     if (data.image_uris && data.image_uris.normal) {
         return data;
+
     } else {
         return await getRandomCard();
     }
